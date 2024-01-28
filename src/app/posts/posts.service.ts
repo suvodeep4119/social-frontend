@@ -13,7 +13,7 @@ export class PostsService {
     }
 
     getPosts() {
-        this.http.get<{message: string, posts: Post[]}>('http://localhost:3000/').subscribe((data) => {
+        this.http.get<{message: string, posts: Post[]}>('http://test-social-backend-env.eba-zsq4rdt4.ap-south-1.elasticbeanstalk.com/').subscribe((data) => {
         console.log('Data', data);
         this.posts = data.posts;
         this.postsUpdated.next([...this.posts]);
